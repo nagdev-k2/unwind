@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {Input, Item, Label} from 'native-base';
 
 import styles from './styles';
-import {fArrow, authBackground} from '../../Constants/images';
+import {fArrow} from '../../Constants/images';
 import OTPTextField from './otpTextField';
 import AuthHeader from '../Common/AuthHeader';
 

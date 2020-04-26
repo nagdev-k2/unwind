@@ -3,10 +3,6 @@ import {StyleSheet} from 'react-native';
 import colors from '../../Constants/colors';
 
 const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.darkGrey,
-  },
   imageContainer: {
     flex: 0,
     zIndex: 0,

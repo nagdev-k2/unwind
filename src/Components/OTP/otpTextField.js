@@ -84,7 +84,7 @@ class OTPTextView extends PureComponent {
             this.inputs[i] = e;
           }}
           key={i}
-          defaultValue={defaultValue ? defaultChars[i] : '0'}
+          defaultValue={defaultValue ? defaultChars[i] : ''}
           style={inputStyle}
           maxLength={cellTextLength}
           onFocus={() => this.onInputFocus(i)}

@@ -4,6 +4,7 @@ const colors = {
   borderInactiveGrey: '#6e6e6e',
   borderActive: '#2a2a2a',
   white: '#fff',
+  textColor: '#eee',
 };
 
 export default colors;

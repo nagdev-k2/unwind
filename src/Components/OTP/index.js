@@ -5,24 +5,14 @@ import {Input, Item, Label} from 'native-base';
 import styles from './styles';
 import {fArrow, authBackground} from '../../Constants/images';
 import OTPTextField from './otpTextField';
+import AuthHeader from '../Common/AuthHeader';
 
 const OTP = (props) => {
   const [otp, setOtp] = useState('');
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <View style={styles.imageContainer}>
-          <Image source={authBackground} style={styles.background} />
-          <View style={styles.headerView}>
-            <View style={styles.logo}>
-              <Text>LOGO</Text>
-            </View>
-            <View style={[styles.btn, styles.leftCurve]}>
-              <Text style={styles.btnText}>SIGNUP</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.lightGreyBkg} />
+        <AuthHeader />
         <View style={styles.userFields}>
           <View style={styles.otpTextView}>
             <Text style={styles.otpText}>4 Digit OTP has been sent to</Text>

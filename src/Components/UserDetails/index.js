@@ -49,9 +49,7 @@ const SignIn = (props) => {
               <Text style={styles.btnText}>SIGNUP</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('UserHome')}
-            style={styles.nextBtn}>
+          <TouchableOpacity style={styles.nextBtn}>
             <Image source={fArrow} style={styles.fArrow} />
           </TouchableOpacity>
         </View>

@@ -4,10 +4,10 @@ import {Input, Item, Label} from 'native-base';
 
 import styles from './styles';
 import {fArrow, authBackground} from '../../Constants/images';
+import OTPTextField from './otpTextField';
 
-const SignIn = (props) => {
-  const [username, handleUserName] = useState('');
-  const [password, handlePassword] = useState('');
+const OTP = (props) => {
+  const [otp, setOtp] = useState('');
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -18,37 +18,29 @@ const SignIn = (props) => {
               <Text>LOGO</Text>
             </View>
             <View style={[styles.btn, styles.leftCurve]}>
-              <Text style={styles.btnText}>SIGNIN</Text>
+              <Text style={styles.btnText}>SIGNUP</Text>
             </View>
           </View>
         </View>
         <View style={styles.lightGreyBkg} />
         <View style={styles.userFields}>
-          <Item floatingLabel>
-            <Label style={styles.input}>User Name</Label>
-            <Input
-              style={styles.input}
-              value={username}
-              onChangeText={(text) => handleUserName(text)}
+          <View style={styles.otpTextView}>
+            <Text style={styles.otpText}>4 Digit OTP has been sent to</Text>
+            <Text style={styles.otpText}>+91-1234567890</Text>
+          </View>
+          <View style={styles.otpField}>
+            <OTPTextField
+              handleTextChange={(text) => setOtp(text)}
+              inputCount={4}
+              keyboardType="numeric"
             />
-          </Item>
-          <Item floatingLabel style={styles.field}>
-            <Label style={styles.input}>Password</Label>
-            <Input
-              secureTextEntry
-              style={styles.input}
-              value={password}
-              onChangeText={(text) => handlePassword(text)}
-            />
-          </Item>
+          </View>
+          <TouchableOpacity style={styles.resendOtpBtn}>
+            <Text style={styles.resendOtpBtnText}>Resend OTP</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.footerBtn}>
-          <View style={[styles.btn, styles.rightCurve]}>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate('SignUp')}>
-              <Text style={styles.btnText}>SIGNUP</Text>
-            </TouchableOpacity>
-          </View>
+          <View />
           <TouchableOpacity
             onPress={() => props.navigation.navigate('UserHome')}
             style={styles.nextBtn}>
@@ -60,4 +52,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default OTP;

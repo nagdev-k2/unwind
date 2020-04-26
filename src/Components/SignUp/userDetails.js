@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import AuthHeader from '../Common/AuthHeader';
-import styles from '../UserDetails/styles';
+import styles from './styles';
 import {fArrow, rbActive, rbInactive} from '../../Constants/images';
 import {signUpOperation} from '../../State/Auth/operations';
 

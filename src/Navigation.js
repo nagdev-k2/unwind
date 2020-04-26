@@ -3,7 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import SplashScreen from 'react-native-splash-screen';
 
-import Entry from './Entry';
+import Entry from './Components/Entry';
+import SignUp from './Components/SignUp';
+import SignIn from './Components/SignIn';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,8 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="entry" headerMode={null}>
         <Stack.Screen name="entry" component={Entry} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="SignIn" component={SignIn} />
       </Stack.Navigator>
     </NavigationContainer>
   );

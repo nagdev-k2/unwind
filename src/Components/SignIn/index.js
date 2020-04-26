@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {Input, Item, Label} from 'native-base';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './styles';
-import {fArrow, authBackground} from '../../Constants/images';
+import {fArrow} from '../../Constants/images';
 import AuthHeader from '../Common/AuthHeader';
+import {signInOperation} from '../../State/Auth/operations';
 
 const SignIn = (props) => {
   const [username, handleUserName] = useState('');
@@ -40,7 +44,10 @@ const SignIn = (props) => {
             </TouchableOpacity>
           </View>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('UserHome')}
+            onPress={() => {
+              // props.actions.signInOperation({username, password});
+              props.navigation.navigate('UserHome');
+            }}
             style={styles.nextBtn}>
             <Image source={fArrow} style={styles.fArrow} />
           </TouchableOpacity>
@@ -50,4 +57,14 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+SignIn.propTypes = {
+  actions: PropTypes.shape({
+    signInOperation: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({signInOperation}, dispatch),
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);

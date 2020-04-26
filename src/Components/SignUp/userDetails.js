@@ -10,12 +10,16 @@ import {
 import {Picker} from 'native-base';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {isEqual, map} from 'lodash';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import AuthHeader from '../Common/AuthHeader';
-import styles from './styles';
+import styles from '../UserDetails/styles';
 import {fArrow, rbActive, rbInactive} from '../../Constants/images';
+import {signUpOperation} from '../../State/Auth/operations';
 
-const SignIn = (props) => {
+const UserDetails = (props) => {
   const [gender, selectGender] = useState('');
   const [date, setDate] = useState(new Date(1598051730000));
   const [show, setShow] = useState(false);
@@ -27,7 +31,7 @@ const SignIn = (props) => {
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
   };
-
+  const userDetails = {};
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -81,7 +85,10 @@ const SignIn = (props) => {
         <View style={styles.footerBtn}>
           <View />
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('OTP')}
+            onPress={() => {
+              props.actions.signUpOperation(userDetails);
+              props.navigation.navigate('OTP', {userDetails});
+            }}
             style={styles.nextBtn}>
             <Image source={fArrow} style={styles.fArrow} />
           </TouchableOpacity>
@@ -91,4 +98,14 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+UserDetails.propTypes = {
+  actions: PropTypes.shape({
+    signUpOperation: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({signUpOperation}, dispatch),
+});
+
+export default connect(null, mapDispatchToProps)(UserDetails);

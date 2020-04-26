@@ -58,6 +58,36 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
+
+  datePickerBtn: {
+    borderBottomWidth: 1,
+    borderColor: colors.borderInactiveGrey,
+    paddingBottom: 10,
+  },
+  radioBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  radioBtnImg: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
+  },
+  genderView: {
+    marginBottom: 40,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  rolePicker: {
+    marginTop: 50,
+    width: '100%',
+    color: colors.white,
+  },
+  rolePickerView: {
+    borderBottomWidth: 1,
+    borderColor: colors.borderInactiveGrey,
+  },
 });
 
 export default style;

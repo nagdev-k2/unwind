@@ -7,7 +7,7 @@ import Entry from './Components/Entry';
 import SignUp from './Components/SignUp';
 import SignIn from './Components/SignIn';
 import OTP from './Components/OTP';
-import UserDetails from './Components/UserDetails';
+import UserDetails from './Components/SignUp/userDetails';
 import UserHome from './Components/UserHome';
 
 const Stack = createStackNavigator();

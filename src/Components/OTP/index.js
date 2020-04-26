@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
-import {Input, Item, Label} from 'native-base';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './styles';
 import {fArrow} from '../../Constants/images';
 import OTPTextField from './otpTextField';
 import AuthHeader from '../Common/AuthHeader';
+import {getOtpOperation} from '../../State/Auth/operations';
 
 const OTP = (props) => {
   const [otp, setOtp] = useState('');
+  const userDetails = {};
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -32,7 +36,10 @@ const OTP = (props) => {
         <View style={styles.footerBtn}>
           <View />
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('UserHome')}
+            onPress={() => {
+              props.actions.getOtpOperation({...userDetails, otp});
+              props.navigation.navigate('UserHome');
+            }}
             style={styles.nextBtn}>
             <Image source={fArrow} style={styles.fArrow} />
           </TouchableOpacity>
@@ -42,4 +49,14 @@ const OTP = (props) => {
   );
 };
 
-export default OTP;
+OTP.propTypes = {
+  actions: PropTypes.shape({
+    signUpOperation: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({getOtpOperation}, dispatch),
+});
+
+export default connect(null, mapDispatchToProps)(OTP);

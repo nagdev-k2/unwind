@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {Input, Item, Label} from 'native-base';
+import {isEqual} from 'lodash';
 
 import styles from './styles';
-import {fArrow, authBackground} from '../../Constants/images';
+import {fArrow} from '../../Constants/images';
 import AuthHeader from '../Common/AuthHeader';
 
 const SignUp = (props) => {
@@ -12,6 +13,9 @@ const SignUp = (props) => {
   const [email, handleEmail] = useState('');
   const [cpassword, handleCPassword] = useState('');
   const [phNumber, handlePhoneNumber] = useState('');
+  let userDetails = {};
+  if (isEqual(password, cpassword))
+    userDetails = {username, password, email, phNumber};
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -70,7 +74,9 @@ const SignUp = (props) => {
             </TouchableOpacity>
           </View>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('UserDetails')}
+            onPress={() =>
+              props.navigation.navigate('UserDetails', {userDetails})
+            }
             style={styles.nextBtn}>
             <Image source={fArrow} style={styles.fArrow} />
           </TouchableOpacity>

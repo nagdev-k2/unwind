@@ -5,6 +5,8 @@ const colors = {
   borderActive: '#2a2a2a',
   white: '#fff',
   textColor: '#eee',
+  black: '#000',
+  notesGrey: '#1f1f1f'
 };
 
 export default colors;

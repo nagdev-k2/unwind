@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import colors from '../../../Constants/colors';
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.black,
+  },
   image: {
     width: 30,
     height: 30,

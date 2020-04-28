@@ -28,21 +28,21 @@ const PostView = (props) => {
         <View style={styles.fBlock}>
           <TouchableOpacity>
             <Image
-              tintColor='white'
+              tintColor="white"
               source={pen}
               style={styles.postActionBtn}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
-              tintColor='white'
+              tintColor="white"
               source={hand}
               style={styles.postActionBtn}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
-              tintColor='white'
+              tintColor="white"
               source={share}
               style={styles.postActionBtn}
             />
@@ -50,7 +50,7 @@ const PostView = (props) => {
         </View>
         <TouchableOpacity>
           <Image
-            tintColor='white'
+            tintColor="white"
             source={downArrow}
             style={styles.postActionBtn}
           />

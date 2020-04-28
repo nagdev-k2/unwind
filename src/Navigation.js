@@ -9,6 +9,7 @@ import SignIn from './Components/SignIn';
 import OTP from './Components/OTP';
 import UserDetails from './Components/SignUp/userDetails';
 import UserHome from './Components/UserHome';
+import UserProfile from './Components/UserProfile';
 
 const Stack = createStackNavigator();
 
@@ -19,10 +20,11 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="UserHome" headerMode={null}>
+      <Stack.Navigator initialRouteName="UserProfile" headerMode={null}>
         <Stack.Screen name="entry" component={Entry} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="UserHome" component={UserHome} />
         <Stack.Screen name="UserDetails" component={UserDetails} />
         <Stack.Screen name="OTP" component={OTP} />

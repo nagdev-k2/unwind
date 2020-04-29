@@ -1,4 +1,5 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {Container, Content} from 'native-base';
 
 import Footer from './footer';
@@ -12,8 +13,9 @@ const Layout = (props) => (
       message={props.message}
       showMore={props.showMore}
     />
+    <StatusBar backgroundColor="black" barStyle="light-content" />
     <Content>{props.children}</Content>
-    <Footer />
+    <Footer navigation={props.navigation} />
   </Container>
 );
 

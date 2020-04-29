@@ -11,7 +11,7 @@ for (let i = 0; i < 150; i++) {
 
 const myFeeds = [
   'https://i.pinimg.com/originals/51/2b/4f/512b4fa1f2695a6f724b55bbd411b924.jpg',
-  'https://sc01.alicdn.com/kf/HTB1GYxQNFXXXXcfXXXXq6xXFXXXy.jpg_350x350.jpg',
+  'https://sc01.alicdn.com/kf/HTB1GYxQNFXXXXcfXXXXq6xXFXXXy.jpg',
   'https://images.shaadisaga.com/shaadisaga_production/photos/pictures/000/738/250/new_large/final_cover.jpg',
   'https://images.shaadisaga.com/shaadisaga_production/photos/pictures/000/733/627/new_large/rohir_gandhi_mangrove.jpg',
   'https://images.shaadisaga.com/shaadisaga_production/photos/pictures/000/733/491/new_large/gaurav_gupta2.jpg',
@@ -21,15 +21,15 @@ const myFeeds = [
 ];
 
 const myNotes = [
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
+  'Lorem Ipsum is simply dummy text of the printing',
 ];
 
 export default {

@@ -19,7 +19,7 @@ const UserHome = (props) => {
     return data.length;
   };
   return (
-    <Layout title="Home" message={true}>
+    <Layout title="Home" message={true} navigation={props.navigation}>
       <View style={styles.headerBtnView}>
         <TouchableOpacity style={[styles.headerBtn, CommonStyle.mR10]}>
           <Text style={styles.btnText}>ANONYMOUS</Text>
@@ -29,7 +29,6 @@ const UserHome = (props) => {
         </TouchableOpacity>
       </View>
       <VirtualizedList
-        style={{backgroundColor: 'black'}}
         data={DummyPosts}
         initialNumToRender={0}
         renderItem={({item}) => <PostView post={item} />}

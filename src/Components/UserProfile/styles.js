@@ -1,9 +1,8 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import colors from '../../Constants/colors';
 
 const styles = StyleSheet.create({
-
   profileAvatar: {
     height: 150,
     width: '50%',
@@ -45,24 +44,43 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   leftBlock: {
-    backgroundColor: 'green',
     width: '20%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    minHeight: 300,
+    maxHeight: 300,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    top: 0,
   },
   rightBlock: {
-    backgroundColor: 'red',
     width: '80%',
-    height: 800,
     padding: 10,
+    right: 0,
+    left: 100,
   },
   btnText: {
-    color: colors.white,
+    color: colors.lightGrey,
     fontWeight: 'bold',
     fontSize: 16,
   },
   verticalBtn: {
+    transform: [{rotate: '-90deg'}],
+  },
+  feedImage: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'red',
+    resizeMode: 'contain',
+  },
+  notesView: {
+    height: 100,
+    backgroundColor: colors.darkGrey,
+    margin: 10,
+    width: '40%',
+    marginLeft: 10,
   },
 });
 

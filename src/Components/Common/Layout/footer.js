@@ -7,11 +7,11 @@ import {home, search, scanner, menu, user} from '../../../Constants/images';
 import styles from './styles';
 
 const footerBtns = [
-  {id: 'home', img: home},
+  {id: 'home', img: home, screen: 'UserHome'},
   {id: 'search', img: search},
   {id: 'scanner', img: scanner},
   {id: 'menu', img: menu},
-  {id: 'user', img: user},
+  {id: 'user', img: user, screen: 'UserProfile'},
 ];
 
 const FooterLayout = (props) => {
@@ -23,9 +23,12 @@ const FooterLayout = (props) => {
           <Button
             key={`footerbtn-${index}`}
             vertical
-            onPress={() =>
-              !isEqual(activeFooter, data.id) && handleActiveFooter(data.id)
-            }>
+            onPress={() => {
+              if (!isEqual(activeFooter, data.id)) {
+                handleActiveFooter(data.id);
+                props.navigation.navigate(data.screen);
+              }
+            }}>
             <Image
               source={data.img}
               style={styles.image}

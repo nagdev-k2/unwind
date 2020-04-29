@@ -1,54 +1,35 @@
-import React from 'react';
-import {Text, ScrollView, View, Image, TouchableOpacity} from 'react-native';
-import {Content} from 'native-base';
+import React, {useState} from 'react';
+import {Text, View, Image} from 'react-native';
+import {isEqual} from 'lodash';
 
 import Layout from '../Common/Layout';
 import CommonStyle from '../Common/CommonStyle';
 import Dummy from '../../Constants/dummy/profile';
 import styles from './styles';
+import PostList from './PostList';
+import LeftMenu from './LeftMenu';
+import ProfileDetails from './ProfileDetails';
 
 const UserProfile = (props) => {
+  const [viewPost, togglePost] = useState('feeds');
   return (
-    <Layout title="Profile" message={true}>
-      <ScrollView>
-        <View style={styles.userDetails}>
-          <Image
-            source={{uri: Dummy.userAvatar}}
-            style={styles.profileAvatar}
+    <Layout title="Profile" message={true} navigation={props.navigation}>
+      <ProfileDetails
+        name={Dummy.name}
+        userAvatar={Dummy.userAvatar}
+        admirers={Dummy.admirers}
+        profileDescription={Dummy.profileDescription}
+      />
+      <View style={[CommonStyle.row]}>
+        <LeftMenu viewPost={viewPost} togglePost={togglePost} />
+        <View style={styles.rightBlock}>
+          <PostList
+            post={!isEqual(viewPost, 'notes') ? Dummy.myFeeds : Dummy.myNotes}
+            isNote={isEqual(viewPost, 'notes')}
+            avatar={Dummy.userAvatar}
           />
-          <View style={styles.profileDescription}>
-            <Text style={styles.profileName}>{Dummy.name}</Text>
-            <View style={styles.userDetails}>
-              <View style={styles.rightBorder}>
-                <Text style={styles.admirersNo}>{Dummy.admirers.length}</Text>
-                <Text style={styles.admirersTitle}>Admiring</Text>
-              </View>
-              <View style={CommonStyle.alignSelfCenter}>
-                <Text style={styles.admirersNo}>{Dummy.admirers.length}</Text>
-                <Text style={styles.admirersTitle}>Admirers</Text>
-              </View>
-            </View>
-          </View>
         </View>
-        <View style={CommonStyle.p10}>
-          <Text style={styles.profileDescriptionTxt}>
-            {Dummy.profileDescription}
-          </Text>
-        </View>
-        <View style={[CommonStyle.row]}>
-          <View style={styles.leftBlock}>
-            <TouchableOpacity style={styles.verticalBtn}>
-              <Text style={styles.btnText}> MY FEEDS</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.verticalBtn}>
-              <Text style={styles.btnText}> MY NOTES</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.rightBlock}>
-            <Text>Posts</Text>
-          </View>
-        </View>
-      </ScrollView>
+      </View>
     </Layout>
   );
 };

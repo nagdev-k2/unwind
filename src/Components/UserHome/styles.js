@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     flexDirection: 'row',
     paddingHorizontal: '5%',
-    backgroundColor: colors.black,
   },
   headerBtn: {
     backgroundColor: colors.borderInactiveGrey,

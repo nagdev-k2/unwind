@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  scannerBtn: {
+    backgroundColor: 'white',
+    borderRadius: 50,
+    padding: 8,
+  },
 });
 
 export default styles;

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Image} from 'react-native';
+import React from 'react';
+import {Image, View} from 'react-native';
 import {Footer, FooterTab, Button} from 'native-base';
 import {isEqual, map} from 'lodash';
 import {connect} from 'react-redux';
@@ -12,7 +12,7 @@ import {setActiveFooter} from '../../../State/Layout/actions';
 
 const footerBtns = [
   {id: 'home', img: home, screen: 'UserHome'},
-  {id: 'search', img: search},
+  {id: 'discover', img: search, screen: 'Discover'},
   {id: 'scanner', img: scanner},
   {id: 'menu', img: menu},
   {id: 'user', img: user, screen: 'UserProfile'},
@@ -33,11 +33,21 @@ const FooterLayout = (props) => {
               actions.setActiveFooter(data.id);
               props.navigation.navigate(data.screen);
             }}>
-            <Image
-              source={data.img}
-              style={styles.image}
-              tintColor={isEqual(active, data.id) ? 'white' : 'grey'}
-            />
+            {isEqual('scanner', data.id) ? (
+              <View style={styles.scannerBtn}>
+                <Image
+                  source={data.img}
+                  style={styles.image}
+                  tintColor={isEqual(active, data.id) ? 'black' : 'grey'}
+                />
+              </View>
+            ) : (
+              <Image
+                source={data.img}
+                style={styles.image}
+                tintColor={isEqual(active, data.id) ? 'white' : 'grey'}
+              />
+            )}
           </Button>
         ))}
       </FooterTab>

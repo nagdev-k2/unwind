@@ -10,6 +10,7 @@ import OTP from './Components/OTP';
 import UserDetails from './Components/SignUp/userDetails';
 import UserHome from './Components/UserHome';
 import UserProfile from './Components/UserProfile';
+import Discover from './Components/Discover';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ const Navigation = () => {
         <Stack.Screen name="entry" component={Entry} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="Discover" component={Discover} />
         <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="UserHome" component={UserHome} />
         <Stack.Screen name="UserDetails" component={UserDetails} />

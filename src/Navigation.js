@@ -21,7 +21,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="UserHome" headerMode={null}>
+      <Stack.Navigator initialRouteName="Discover" headerMode={null}>
         <Stack.Screen name="entry" component={Entry} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />

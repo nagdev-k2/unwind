@@ -46,8 +46,27 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   profileBackground: {
-    width: '100%',
-    height: '100%',
+    width: Dimensions.get('window').width,
+    maxHeight: Dimensions.get('window').height - 100,
+    minHeight: Dimensions.get('window').height - 100,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    opacity: 0.8,
+  },
+  profileDescription: {
+    width: '95%',
+    backgroundColor: colors.white,
+    justifyContent: 'flex-start',
+    padding: 10,
+    height: 350,
+  },
+  personLeftBlock: {
+    width: '20%',
+  },
+  uploadedImage: {
+    width: 30,
+    height: 30,
   },
 });
 

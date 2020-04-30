@@ -7,7 +7,9 @@ const PeopleList = (props) => {
   const renderPeople = (data) => {
     return (
       <TouchableOpacity
-        onPress={() => props.navigation.navigate('Profile', {data})}
+        onPress={() =>
+          props.navigation.navigate('Profile', {data, people: props.people})
+        }
         style={[CommonStyle.row, CommonStyle.p10, CommonStyle.alignSelfCenter]}>
         <Image source={{uri: data.avatar}} style={styles.avatar} />
         <View>

@@ -30,12 +30,16 @@ const ProfileDescription = (props) => {
       <Text style={[CommonStyle.fBold, CommonStyle.f18, CommonStyle.mTop10]}>
         Uploads
       </Text>
-      <FlatList
-        data={props.personDetail.uploads}
-        renderItem={({item}) => renderUploads(item)}
-        keyExtractor={(item) => item.id}
-        horizontal={true}
-      />
+      {props.personDetail.uploads.length > 0 ? (
+        <FlatList
+          data={props.personDetail.uploads}
+          renderItem={({item}) => renderUploads(item)}
+          keyExtractor={(item) => item.id}
+          horizontal={true}
+        />
+      ) : (
+        <Text>No Uploads available</Text>
+      )}
     </View>
   );
 };

@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
-    opacity: 0.8,
   },
   profileDescription: {
     width: '95%',
@@ -65,9 +64,14 @@ const styles = StyleSheet.create({
     width: '20%',
   },
   uploadedImage: {
-    width: 30,
-    height: 30,
+    marginTop: 10,
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
   },
+  inActive: {
+    opacity: 0.5,
+  }
 });
 
 export default styles;

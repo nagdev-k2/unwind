@@ -7,6 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
+import {isEqual} from 'lodash';
 
 import Layout from '../Common/Layout';
 import CommonStyle from '../Common/CommonStyle';
@@ -16,13 +17,19 @@ import ProfileDescription from './ProfileDescription';
 const ProfileView = (props) => {
   const {data, people} = props.route.params;
   const [personDetail, handlePersonDetails] = useState(data);
-  const renderPeople = (data) => {
+  const renderPeople = (person) => {
     return (
       <TouchableOpacity
-        onPress={() => handlePersonDetails(data)}
+        onPress={() => handlePersonDetails(person)}
         style={[CommonStyle.p10, CommonStyle.alignSelfCenter]}>
-        <Image source={{uri: data.avatar}} style={styles.avatar} />
-        <Text style={[CommonStyle.fBold, {color: 'white'}]}>{data.name}</Text>
+        <Image
+          source={{uri: person.avatar}}
+          style={[
+            styles.avatar,
+            {opacity: isEqual(personDetail, person) ? 1 : 0.5},
+          ]}
+        />
+        <Text style={[CommonStyle.fBold, {color: 'white'}]}>{person.name}</Text>
       </TouchableOpacity>
     );
   };

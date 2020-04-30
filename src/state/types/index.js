@@ -5,3 +5,9 @@ export const SIGN_UP = 'SIGN_IN';
 
 // Layout
 export const SET_ACTIVE_FOOTER = 'SET_ACTIVE_FOOTER';
+
+// UserHome
+export const VIEW_ALL_POST = 'VIEW_ALL_POST';
+
+// UserProfile
+export const GET_PROFILE_DETAILS = 'GET_PROFILE_DETAILS';

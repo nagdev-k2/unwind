@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {hand, share, downArrow, pen} from '../../Constants/images';
 

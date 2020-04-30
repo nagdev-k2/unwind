@@ -4,10 +4,14 @@ import {View, VirtualizedList, Text, TouchableOpacity} from 'react-native';
 import Layout from '../Common/Layout';
 import styles from './styles';
 import CommonStyle from '../Common/CommonStyle';
-import DummyPosts from '../../Constants/dummy/home';
 import PostView from './PostView';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import * as UserHomeOperations from '../../State/UserHome/operations';
 
 const UserHome = (props) => {
+  const {allPosts} = props;
   const getItem = (data, index) => {
     return {
       id: `item-${index}`,
@@ -29,7 +33,7 @@ const UserHome = (props) => {
         </TouchableOpacity>
       </View>
       <VirtualizedList
-        data={DummyPosts}
+        data={allPosts}
         initialNumToRender={0}
         renderItem={({item}) => <PostView post={item} />}
         keyExtractor={(item) => item.key}
@@ -40,4 +44,12 @@ const UserHome = (props) => {
   );
 };
 
-export default UserHome;
+const mapStateToProps = (state) => ({
+  allPosts: state.userHome.allPosts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({UserHomeOperations}, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserHome);

@@ -11,6 +11,8 @@ import UserDetails from './Components/SignUp/userDetails';
 import UserHome from './Components/UserHome';
 import UserProfile from './Components/UserProfile';
 import Discover from './Components/Discover';
+import People from './Components/People';
+import Profile from './Components/People/Profile';
 
 const Stack = createStackNavigator();
 
@@ -21,10 +23,12 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Discover" headerMode={null}>
+      <Stack.Navigator initialRouteName="People" headerMode={null}>
         <Stack.Screen name="entry" component={Entry} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="People" component={People} />
         <Stack.Screen name="Discover" component={Discover} />
         <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="UserHome" component={UserHome} />

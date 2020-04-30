@@ -38,7 +38,7 @@ const discoverType = [
   },
 ];
 
-const Discover = () => {
+const Discover = (props) => {
   const [search, handleSearch] = useState('');
   const [discType, handleDiscType] = useState('Shopping');
   const renderItem = ({item, index}) => (
@@ -49,12 +49,14 @@ const Discover = () => {
   let dummyArray = Dummy;
   let splitArray = [];
   for (let i = 0; dummyArray.length > 0; i++) {
-    const fArray = dummyArray.splice(0, Math.floor(Math.random() * Math.floor(4)) + 1)
+    const fArray = dummyArray.splice(
+      0,
+      Math.floor(Math.random() * Math.floor(4)) + 1,
+    );
     splitArray.push(fArray);
   }
-  console.log(Dummy)
   return (
-    <Layout title="Discover" message={true}>
+    <Layout title="Discover" message={true} navigation={props.navigation}>
       <View style={styles.searchInput}>
         <Input value={search} onChangeText={(text) => handleSearch(text)} />
         <TouchableOpacity>
@@ -78,24 +80,28 @@ const Discover = () => {
             key={`disc-${index}`}
             style={[CommonStyle.mH10, CommonStyle.alignSelfCenter]}
             onPress={(text) => handleDiscType(data.name)}>
-            <Image source={{uri: data.url}} style={[styles.typeBtn, isEqual(data.name, discType) && styles.active]} />
+            <Image
+              source={{uri: data.url}}
+              style={[
+                styles.typeBtn,
+                isEqual(data.name, discType) && styles.active,
+              ]}
+            />
             <Text style={{color: 'white'}}>{data.name}</Text>
           </TouchableOpacity>
         ))}
       </View>
-      <View style={{paddingHorizontal: 20 , marginTop: 20}}>
-        {
-          map(splitArray, (data, index) => (
-            <View key={`grid-${index}`}>
-              <GridList
-                showSeparator={false}
-                data={data}
-                numColumns={3}
-                renderItem={renderItem}
-              />
-            </View>
-          ))
-        }
+      <View style={{paddingHorizontal: 20, marginTop: 20}}>
+        {map(splitArray, (data, index) => (
+          <View key={`grid-${index}`}>
+            <GridList
+              showSeparator={false}
+              data={data}
+              numColumns={3}
+              renderItem={renderItem}
+            />
+          </View>
+        ))}
       </View>
     </Layout>
   );

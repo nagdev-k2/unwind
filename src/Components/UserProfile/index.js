@@ -27,7 +27,11 @@ const UserProfile = (props) => {
         <LeftMenu viewPost={viewPost} togglePost={togglePost} />
         <View style={styles.rightBlock}>
           <PostList
-            post={!isEqual(viewPost, 'notes') ? profileDetails.myFeeds : profileDetails.myNotes}
+            post={
+              !isEqual(viewPost, 'notes')
+                ? profileDetails.myFeeds
+                : profileDetails.myNotes
+            }
             isNote={isEqual(viewPost, 'notes')}
             avatar={profileDetails.userAvatar}
           />

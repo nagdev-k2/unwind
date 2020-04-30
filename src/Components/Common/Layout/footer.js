@@ -14,7 +14,7 @@ const footerBtns = [
   {id: 'home', img: home, screen: 'UserHome'},
   {id: 'discover', img: search, screen: 'Discover'},
   {id: 'scanner', img: scanner},
-  {id: 'menu', img: menu},
+  {id: 'menu', img: menu, screen: 'People'},
   {id: 'user', img: user, screen: 'UserProfile'},
 ];
 

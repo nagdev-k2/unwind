@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     width: '80%',
     padding: 10,
     backgroundColor: colors.white,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').height - 100,
   },
   btnText: {
     color: colors.lightGrey,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   inActive: {
     opacity: 0.5,
-  }
+  },
 });
 
 export default styles;

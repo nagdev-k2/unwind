@@ -13,26 +13,33 @@ import ProfileDetails from './ProfileDetails';
 import {getProfileDetails} from '../../State/UserProfile/operations';
 
 const UserProfile = (props) => {
-  const [viewPost, togglePost] = useState('feeds');
+  const [viewPost, togglePost] = useState('MY FEEDS');
   const {profileDetails} = props;
   return (
-    <Layout title="Profile" message={true} navigation={props.navigation}>
+    <Layout
+      title="Profile"
+      message={true}
+      navigation={props.navigation}
+      btnText1="MY FEEDS"
+      btnText2="MY NOTES"
+      activeBtn={viewPost}
+      btnMethod={(type) => togglePost(type)}
+      leftMenu={true}>
       <ProfileDetails
         name={profileDetails.name}
         userAvatar={profileDetails.userAvatar}
         admirers={profileDetails.admirers}
         profileDescription={profileDetails.profileDescription}
       />
-      <View style={[CommonStyle.row]}>
-        <LeftMenu viewPost={viewPost} togglePost={togglePost} />
+      <View style={CommonStyle.alignSelfRight}>
         <View style={styles.rightBlock}>
           <PostList
             post={
-              !isEqual(viewPost, 'notes')
+              !isEqual(viewPost, 'MY NOTES')
                 ? profileDetails.myFeeds
                 : profileDetails.myNotes
             }
-            isNote={isEqual(viewPost, 'notes')}
+            isNote={isEqual(viewPost, 'MY NOTES')}
             avatar={profileDetails.userAvatar}
           />
         </View>

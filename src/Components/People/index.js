@@ -3,10 +3,9 @@ import {View, TouchableOpacity, Image} from 'react-native';
 import {Input} from 'native-base';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {filter, includes, isEmpty, trim} from 'lodash';
+import {filter, includes, isEmpty, trim, isEqual} from 'lodash';
 
 import Layout from '../../Components/Common/Layout';
-import LeftMenu from './LeftMenu';
 import styles from './styles';
 import PeopleList from './PeopleList';
 import CommonStyle from '../Common/CommonStyle';
@@ -21,12 +20,24 @@ const People = (props) => {
   peopleList = filter(people, (data) => {
     if (includes(data.type, peopleType)) {
       if (trim(isEmpty(search))) {
-        if (includes(data.name, search)) return data;
-      } else return data;
+        if (includes(data.name, search)) {
+          return data;
+        }
+      } else {
+        return data;
+      }
     }
   });
   return (
-    <Layout title="People" showMore={true} navigation={props.navigation}>
+    <Layout
+      title="People"
+      showMore={true}
+      navigation={props.navigation}
+      btnText1="Admirers"
+      btnText2="Admiring"
+      activeBtn={peopleType}
+      btnMethod={(type) => togglePeopleType(type)}
+      leftMenu={true}>
       <View style={styles.searchInput}>
         <Input value={search} onChangeText={(text) => handleSearch(text)} />
         <TouchableOpacity>
@@ -37,8 +48,7 @@ const People = (props) => {
           />
         </TouchableOpacity>
       </View>
-      <View style={CommonStyle.row}>
-        <LeftMenu peopleType={peopleType} togglePeopleType={togglePeopleType} />
+      <View style={CommonStyle.alignSelfRight}>
         <View style={styles.rightBlock}>
           <PeopleList
             people={peopleList}

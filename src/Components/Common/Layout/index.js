@@ -5,6 +5,7 @@ import {Container, Content} from 'native-base';
 import Footer from './footer';
 import Header from './header';
 import styles from './styles';
+import LeftMenu from './LeftMenu';
 
 const Layout = (props) => (
   <Container style={styles.container}>
@@ -15,6 +16,7 @@ const Layout = (props) => (
     />
     <StatusBar backgroundColor="black" barStyle="light-content" />
     <Content>{props.children}</Content>
+    {props.leftMenu && <LeftMenu data={props} />}
     <Footer navigation={props.navigation} />
   </Container>
 );

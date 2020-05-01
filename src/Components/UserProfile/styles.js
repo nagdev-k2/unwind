@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import colors from '../../Constants/colors';
 
@@ -58,8 +58,7 @@ const styles = StyleSheet.create({
   rightBlock: {
     width: '80%',
     padding: 10,
-    right: 0,
-    left: 100,
+    height: Dimensions.get('window').height - 100,
   },
   btnText: {
     color: colors.lightGrey,

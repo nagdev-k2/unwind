@@ -4,9 +4,7 @@ import {Image, Text, FlatList, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import CommonStyle from '../Common/CommonStyle';
 
-const PostView = (props) => {
-  console.log('------', props);
-  return (
+const PostView = (props) => (
   <TouchableOpacity
     style={[styles.notesView, {padding: props.isNote ? 10 : 0}]}>
     {props.isNote ? (
@@ -20,7 +18,7 @@ const PostView = (props) => {
       />
     )}
   </TouchableOpacity>
-);}
+);
 
 const PostList = (props) => {
   return (

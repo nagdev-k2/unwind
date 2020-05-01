@@ -22,6 +22,26 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     padding: 8,
   },
+  leftBlock: {
+    width: '20%',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    minHeight: 300,
+    maxHeight: 300,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    top: 250,
+  },
+  verticalBtn: {
+    transform: [{rotate: '-90deg'}],
+  },
+  btnText: {
+    color: colors.lightGrey,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
 });
 
 export default styles;

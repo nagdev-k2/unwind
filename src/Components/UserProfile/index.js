@@ -29,6 +29,7 @@ const UserProfile = (props) => {
         name={profileDetails.name}
         userAvatar={profileDetails.userAvatar}
         admirers={profileDetails.admirers}
+        navigation={props.navigation}
         profileDescription={profileDetails.profileDescription}
       />
       <View style={CommonStyle.alignSelfRight}>

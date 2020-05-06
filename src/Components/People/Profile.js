@@ -6,6 +6,7 @@ import {
   View,
   FlatList,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import {isEqual} from 'lodash';
 
@@ -43,6 +44,7 @@ const ProfileView = (props) => {
             data={people}
             renderItem={({item}) => renderPeople(item)}
             keyExtractor={(item) => item.id}
+            showsVerticalScrollIndicator={false}
           />
         </View>
         <View styles={styles.rightBlock}>

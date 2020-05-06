@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
   },
   profileBackground: {
     width: Dimensions.get('window').width,
-    maxHeight: Dimensions.get('window').height - 100,
-    minHeight: Dimensions.get('window').height - 100,
+    height: Dimensions.get('window').height * 0.78,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',

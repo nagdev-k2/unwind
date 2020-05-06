@@ -14,6 +14,9 @@ import Discover from './Components/Discover';
 import People from './Components/People';
 import Profile from './Components/People/Profile';
 import Scanner from './Components/Scanner';
+import Help from './Components/Help';
+import EducationalDetails from './Components/Help/educationalDetails';
+import RegistrationDetails from './Components/Help/registrationDetails';
 
 const Stack = createStackNavigator();
 
@@ -24,7 +27,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="UserProfile" headerMode={null}>
+      <Stack.Navigator initialRouteName="entry" headerMode={null}>
         <Stack.Screen name="entry" component={Entry} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
@@ -36,6 +39,15 @@ const Navigation = () => {
         <Stack.Screen name="UserDetails" component={UserDetails} />
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="Scanner" component={Scanner} />
+        <Stack.Screen name="Help" component={Help} />
+        <Stack.Screen
+          name="EducationalDetails"
+          component={EducationalDetails}
+        />
+        <Stack.Screen
+          name="RegistrationDetails"
+          component={RegistrationDetails}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

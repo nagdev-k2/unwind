@@ -42,6 +42,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
+  greyStyle: {
+    backgroundColor: colors.lightGrey,
+    elevation: 0.0,
+  },
 });
 
 export default styles;

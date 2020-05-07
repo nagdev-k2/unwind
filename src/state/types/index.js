@@ -11,3 +11,7 @@ export const VIEW_ALL_POST = 'VIEW_ALL_POST';
 
 // UserProfile
 export const GET_PROFILE_DETAILS = 'GET_PROFILE_DETAILS';
+
+// Roles
+export const GET_DEGREES = 'GET_DEGREES';
+export const GET_UNIVERSITIES = 'GET_UNIVERSITIES';

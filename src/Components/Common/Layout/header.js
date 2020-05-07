@@ -1,12 +1,18 @@
 import React from 'react';
 import {Image, View} from 'react-native';
 import {Header, Button, Title, Body} from 'native-base';
+import {isEqual} from 'lodash';
 
 import {back, showMore, message} from '../../../Constants/images';
 import styles from './styles';
 
 const HeaderLayout = (props) => (
-  <Header style={styles.blackStyle}>
+  <Header
+    style={
+      isEqual(props.backgroundColor, 'default')
+        ? styles.blackStyle
+        : styles.greyStyle
+    }>
     <Body style={styles.header}>
       <Button transparent>
         <Image source={back} tintColor="#fff" style={styles.image} />

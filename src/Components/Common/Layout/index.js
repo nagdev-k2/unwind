@@ -8,13 +8,23 @@ import styles from './styles';
 import LeftMenu from './LeftMenu';
 
 const Layout = (props) => (
-  <Container style={styles.container}>
+  <Container
+    style={[
+      styles.container,
+      props.backgroundColor && {backgroundColor: props.backgroundColor},
+    ]}>
     <Header
       title={props.title}
       message={props.message}
       showMore={props.showMore}
+      backgroundColor={
+        props.backgroundColor ? props.backgroundColor : 'default'
+      }
     />
-    <StatusBar backgroundColor="black" barStyle="light-content" />
+    <StatusBar
+      backgroundColor={props.backgroundColor ? props.backgroundColor : 'black'}
+      barStyle="light-content"
+    />
     <Content>{props.children}</Content>
     {props.leftMenu && <LeftMenu data={props} />}
     <Footer navigation={props.navigation} />

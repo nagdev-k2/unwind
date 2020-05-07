@@ -51,6 +51,35 @@ const style = StyleSheet.create({
     backgroundColor: colors.lightGrey,
     height: 50,
   },
+  dropdownView: {
+    backgroundColor: colors.lightGrey,
+    marginBottom: 0,
+  },
+  btnTitle: {
+    flexDirection: 'row',
+    padding: 5,
+    borderBottomColor: colors.white,
+    borderBottomWidth: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  dropdownBtnText: {
+    color: colors.white,
+    fontSize: 15,
+  },
+  dropDownImage: {
+    width: 30,
+    height: 30,
+  },
+  dropdownContent: {
+    borderWidth: 1,
+    borderColor: colors.white,
+  },
+  dropdownBtn: {
+    borderBottomWidth: 1,
+    borderColor: colors.white,
+    height: 40,
+  },
 });
 
 export default style;

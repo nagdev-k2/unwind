@@ -15,4 +15,4 @@ export const downArrow = require('../Assets/images/down-arrow.png');
 export const share = require('../Assets/images/share.png');
 export const hand = require('../Assets/images/hand.png');
 export const inptSearch = require('../Assets/images/inptSearch.png');
-export const dropDown = require('../Assets/images/dropDown.png');
+export const attachment = require('../Assets/images/attachment.png');

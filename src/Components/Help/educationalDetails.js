@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import {connect} from 'react-redux';
-import {isEqual} from 'lodash';
 
 import Layout from '../Common/Layout';
 import styles from './styles';
 import colors from '../../Constants/colors';
-import DropDown from '../Common/dropdown';
+import DropDown from '../Common/Dropdown';
 
 const years = ['2024', '2023', '2022', '2021', '2020'];
 

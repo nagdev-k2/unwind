@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   greyStyle: {
-    backgroundColor: colors.lightGrey,
+    backgroundColor: colors.darkGrey,
     elevation: 0.0,
   },
 });

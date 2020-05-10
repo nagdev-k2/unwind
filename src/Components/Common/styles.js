@@ -52,8 +52,9 @@ const style = StyleSheet.create({
     height: 50,
   },
   dropdownView: {
-    backgroundColor: colors.lightGrey,
-    marginBottom: 0,
+    backgroundColor: colors.darkGrey,
+    marginBottom: 50,
+    width: '100%',
   },
   btnTitle: {
     flexDirection: 'row',
@@ -61,7 +62,6 @@ const style = StyleSheet.create({
     borderBottomColor: colors.white,
     borderBottomWidth: 1,
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   dropdownBtnText: {
     color: colors.white,
@@ -73,12 +73,18 @@ const style = StyleSheet.create({
   },
   dropdownContent: {
     borderWidth: 1,
-    borderColor: colors.white,
+    borderColor: colors.borderInactiveGrey,
+    maxHeight: 300,
+    position: 'absolute',
+    width: '90%',
+    zIndex: 100,
+    backgroundColor: colors.darkGrey,
+    top: 50,
   },
   dropdownBtn: {
-    borderBottomWidth: 1,
-    borderColor: colors.white,
     height: 40,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
   },
 });
 

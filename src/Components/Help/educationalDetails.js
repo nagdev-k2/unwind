@@ -7,6 +7,8 @@ import styles from './styles';
 import colors from '../../Constants/colors';
 import DropDown from '../Common/dropdown';
 
+const years = ['2024', '2023', '2022', '2021', '2020'];
+
 const EducationalDetails = (props) => {
   const [selectedDegree, handleDegree] = useState('');
   const [selectedUniversity, handleUniversity] = useState('');
@@ -16,7 +18,7 @@ const EducationalDetails = (props) => {
     <Layout
       title="Educational Details"
       navigation={props.navigation}
-      backgroundColor={colors.lightGrey}>
+      backgroundColor={colors.darkGrey}>
       <View style={styles.container}>
         <DropDown
           selectedValue={selectedDegree}
@@ -30,9 +32,12 @@ const EducationalDetails = (props) => {
           method={handleUniversity}
           dropDownContent={universitiesList}
         />
-        <TouchableOpacity block transparent style={styles.btnTitle}>
-          <Text style={styles.btnText}>Passing Year</Text>
-        </TouchableOpacity>
+        <DropDown
+          selectedValue={selectPassingYear}
+          title="Passing Year"
+          method={handlePassingYear}
+          dropDownContent={years}
+        />
       </View>
     </Layout>
   );

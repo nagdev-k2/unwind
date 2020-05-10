@@ -9,6 +9,16 @@ const styles = StyleSheet.create({
   layout: {
     backgroundColor: colors.lightGrey,
   },
+  btnTitle: {
+    borderBottomWidth: 1,
+    borderColor: colors.white,
+    paddingBottom: 10,
+    paddingHorizontal: 5,
+    marginTop: 10,
+  },
+  btnText: {
+    color: colors.white,
+  },
 });
 
 export default styles;

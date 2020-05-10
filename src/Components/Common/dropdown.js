@@ -1,18 +1,21 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
-import {map} from 'lodash';
+import {map, isEqual} from 'lodash';
 
 import styles from './styles';
 import {dropDown} from '../../Constants/images';
 import colors from '../../Constants/colors';
 
 const DropDown = (props) => {
-  const [showDropdown, toggleDropdown] = useState(false);
+  const {activeDropdown, toggleDropdown} = props;
   return (
     <View style={{position: 'relative', alignItems: 'center'}}>
       <View style={styles.dropdownView}>
         <TouchableOpacity
-          onPress={() => toggleDropdown(!showDropdown)}
+          onPress={() => {
+            if (isEqual(activeDropdown, props.title)) toggleDropdown('');
+            else toggleDropdown(props.title);
+          }}
           style={styles.btnTitle}>
           <Text style={styles.dropdownBtnText}>
             {props.selectedValue ? props.selectedValue : props.title}
@@ -24,7 +27,7 @@ const DropDown = (props) => {
           />
         </TouchableOpacity>
       </View>
-      {showDropdown && (
+      {isEqual(activeDropdown, props.title) && (
         <ScrollView
           style={[
             styles.dropdownContent,
@@ -35,7 +38,7 @@ const DropDown = (props) => {
               key={`${index}-${props.title}`}
               onPress={() => {
                 props.method(data);
-                toggleDropdown(!showDropdown);
+                toggleDropdown('');
               }}
               style={styles.dropdownBtn}>
               <Text

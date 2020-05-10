@@ -74,10 +74,10 @@ const style = StyleSheet.create({
   dropdownContent: {
     borderWidth: 1,
     borderColor: colors.borderInactiveGrey,
-    maxHeight: 300,
+    maxHeight: 150,
     position: 'absolute',
     width: '90%',
-    zIndex: 100,
+    zIndex: 9,
     backgroundColor: colors.darkGrey,
     top: 50,
   },

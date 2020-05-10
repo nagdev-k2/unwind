@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {connect} from 'react-redux';
+import {isEqual} from 'lodash';
 
 import Layout from '../Common/Layout';
 import styles from './styles';
@@ -13,6 +14,7 @@ const EducationalDetails = (props) => {
   const [selectedDegree, handleDegree] = useState('');
   const [selectedUniversity, handleUniversity] = useState('');
   const [selectPassingYear, handlePassingYear] = useState('');
+  const [activeDropdown, toggleDropdown] = useState(false);
   const {degreesList, universitiesList} = props;
   return (
     <Layout
@@ -25,18 +27,24 @@ const EducationalDetails = (props) => {
           title="Degree"
           method={handleDegree}
           dropDownContent={degreesList}
+          activeDropdown={activeDropdown}
+          toggleDropdown={toggleDropdown}
         />
         <DropDown
           selectedValue={selectedUniversity}
           title="College / University"
           method={handleUniversity}
           dropDownContent={universitiesList}
+          activeDropdown={activeDropdown}
+          toggleDropdown={toggleDropdown}
         />
         <DropDown
           selectedValue={selectPassingYear}
           title="Passing Year"
           method={handlePassingYear}
           dropDownContent={years}
+          activeDropdown={activeDropdown}
+          toggleDropdown={toggleDropdown}
         />
       </View>
     </Layout>

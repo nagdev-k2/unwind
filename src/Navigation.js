@@ -17,6 +17,7 @@ import Scanner from './Components/Scanner';
 import Help from './Components/Help';
 import EducationalDetails from './Components/Help/educationalDetails';
 import RegistrationDetails from './Components/Help/registrationDetails';
+import Chats from './Components/Chats';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,7 @@ const Navigation = () => {
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="Scanner" component={Scanner} />
         <Stack.Screen name="Help" component={Help} />
+        <Stack.Screen name="Chats" component={Chats} />
         <Stack.Screen
           name="EducationalDetails"
           component={EducationalDetails}

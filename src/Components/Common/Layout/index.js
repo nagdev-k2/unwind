@@ -14,6 +14,7 @@ const Layout = (props) => (
       props.backgroundColor && {backgroundColor: props.backgroundColor},
     ]}>
     <Header
+      navigation={props.navigation}
       title={props.title}
       message={props.message}
       showMore={props.showMore}

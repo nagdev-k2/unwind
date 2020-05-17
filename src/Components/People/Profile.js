@@ -6,7 +6,6 @@ import {
   View,
   FlatList,
   TouchableOpacity,
-  Dimensions,
 } from 'react-native';
 import {isEqual} from 'lodash';
 
@@ -14,6 +13,7 @@ import Layout from '../Common/Layout';
 import CommonStyle from '../Common/CommonStyle';
 import styles from './styles';
 import ProfileDescription from './ProfileDescription';
+import {message} from '../../Constants/images';
 
 const ProfileView = (props) => {
   const {data, people} = props.route.params;
@@ -48,6 +48,17 @@ const ProfileView = (props) => {
           />
         </View>
         <View styles={styles.rightBlock}>
+          <View style={styles.openMessages}>
+            <TouchableOpacity
+              style={styles.msgBtn}
+              onPress={() => props.navigation.navigate('Messages')}>
+              <Image
+                source={message}
+                style={styles.searchImg}
+                tintColor="white"
+              />
+            </TouchableOpacity>
+          </View>
           <ProfileDescription personDetail={personDetail} />
         </View>
       </ImageBackground>

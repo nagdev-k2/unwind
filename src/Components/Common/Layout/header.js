@@ -19,14 +19,17 @@ const HeaderLayout = (props) => (
       </Button>
       <Title>{props.title}</Title>
       {props.message || props.showMore ? (
-        <Button transparent>
-          {props.message && (
+        props.message ? (
+          <Button
+            transparent
+            onPress={() => props.navigation.navigate('Chats')}>
             <Image source={message} tintColor="#fff" style={styles.image} />
-          )}
-          {props.showMore && (
+          </Button>
+        ) : (
+          <Button transparent>
             <Image source={showMore} tintColor="#fff" style={styles.image} />
-          )}
-        </Button>
+          </Button>
+        )
       ) : (
         <View style={styles.image} />
       )}

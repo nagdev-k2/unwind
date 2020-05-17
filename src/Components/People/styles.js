@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   profileBackground: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height * 0.78,
+    height: Dimensions.get('window').height * 0.8,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
@@ -70,6 +70,20 @@ const styles = StyleSheet.create({
   },
   inActive: {
     opacity: 0.5,
+  },
+  msgBtn: {
+    backgroundColor: 'black',
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  openMessages: {
+    width: '80%',
+    alignItems: 'flex-end',
+    bottom: -20,
+    zIndex: 9,
   },
 });
 

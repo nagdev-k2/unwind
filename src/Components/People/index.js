@@ -3,7 +3,7 @@ import {View, TouchableOpacity, Image} from 'react-native';
 import {Input} from 'native-base';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {filter, includes, isEmpty, trim, isEqual} from 'lodash';
+import {filter, includes, isEmpty, trim} from 'lodash';
 
 import Layout from '../../Components/Common/Layout';
 import styles from './styles';

@@ -51,7 +51,7 @@ const ProfileView = (props) => {
           <View style={styles.openMessages}>
             <TouchableOpacity
               style={styles.msgBtn}
-              onPress={() => props.navigation.navigate('Messages')}>
+              onPress={() => props.navigation.navigate('Chats')}>
               <Image
                 source={message}
                 style={styles.searchImg}
